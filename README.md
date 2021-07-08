@@ -17,21 +17,21 @@
 pages
   --main
     main.js
-	  main.html
+    main.html
   --serch
     serch.js
-	  serch.html
+    serch.html
 
 src
   --css
     --main
-	    --main.css
+        --main.css
   --js
     --main
-	    --main.js
+        --main.js
   --image
     --main
-	    --icon.pnf
+        --icon.pnf
 ```
 
 
