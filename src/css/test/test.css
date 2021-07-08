@@ -1,0 +1,12 @@
+.img1, .img2 {
+  width: 80px;
+  height: 80px;
+}
+
+.img1 {
+  background-image: url('/src/image/tx.jpg');
+}
+
+.img2 {
+  background-image: url('/src/image/zan.png');
+}
