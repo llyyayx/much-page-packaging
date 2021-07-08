@@ -3,6 +3,9 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const batch = require('./wepack.batch.entry')['entry']();
+const autoLoad = require('./webpack.automation.load')
+// 自动引入automation/index.js中的内容-可自由配置
+autoLoad.automation(batch)
 
 const isProduction = process.env.NODE_ENV == "production";
 
