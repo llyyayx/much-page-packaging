@@ -9,5 +9,6 @@ exports.automation = (batch) => {
   batch.entry['automations'] = './automation/index.js'
   batch.entryTemplate.forEach(item => {
     item.userOptions.chunks.unshift('automations')
+    item.userOptions.chunksSortMode = 'manual'
   })
 }
