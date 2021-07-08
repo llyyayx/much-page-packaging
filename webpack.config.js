@@ -42,6 +42,24 @@ const config = {
     new CssMinimizerPlugin()
   ],
 
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        //打包公共模块
+        commons: {
+          //initial表示提取入口文件的公共部分
+          chunks: 'initial',
+          //表示提取公共部分最少的文件数
+          minChunks: 2,
+          //表示提取公共部分最小的大小
+          minSize: 0,
+          //提取出来的文件命名
+          name: 'commons'
+        }
+      }
+    }
+  },
+
   module: {
     rules: [
       {
