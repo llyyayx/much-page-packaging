@@ -2,6 +2,7 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 const batch = require('./wepack.batch.entry')['entry']();
 const autoLoad = require('./webpack.automation.load')
 // 自动引入automation/index.js中的内容-可自由配置
@@ -42,7 +43,13 @@ const config = {
       filename: 'css/[name]/[name].[hash].css'
     }),
     // css压缩
-    new CssMinimizerPlugin()
+    new CssMinimizerPlugin(),
+    // 复制静态资源库
+    new CopyPlugin({
+      patterns: [
+        { from: path.resolve(__dirname, 'static'), to: 'static' }
+      ],
+    })
   ],
 
   optimization: {
@@ -77,7 +84,25 @@ const config = {
         test: /\.html$/,
         loader: 'html-loader',
         options: {
-          minimize: false
+          minimize: false,
+          // html不处理link\script标签(为了引入静态资源不hash)
+          sources: {
+            list: [
+              '...',
+              {
+                tag: 'script',
+                attribute: 'src',
+                type: 'src',
+                filter : () => false,
+              },
+              {
+                tag: 'link',
+                attribute: 'href',
+                type: 'src',
+                filter : () => false,
+              }
+            ]
+          }
         }
       },
       {

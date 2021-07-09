@@ -7,7 +7,7 @@
 提供了公共文件抽离配置，公共的css,js请放入common文件夹内，并且在入口文件引用，在打包的时候这些公共文件不会被重复打包而是抽离出来。
 如果你想要的是自动引入某些公共类库,请在automation/index.js中的引入，这些文件将会自动打包并引入进模板，但注意入口文件禁止命名为automations。
 禁用自动引入可以webpack.config.js中注释autoLoad.automation(batch)即可。
-一些ui库js库无需打包的直接在模板引入即可。
+一些ui库js库无需打包的放入static文件夹并直接在模板引入即可。
 
 ### 前提
 
@@ -32,6 +32,16 @@ src
   --image
     --main
         --icon.pnf
+```
+
+### 目录说明
+
+```
+automation 自动引入公共资源js脚本(index.js内的资源会自动注入)
+common 公共资源(css/js)存放的文件夹
+pages html静态页面
+src 资源存放文件夹(按页面划分)，存放各个页面的图片，css，js资源等
+static 静态资源文件夹(一般存放库文件)，如jquery, uicss等
 ```
 
 

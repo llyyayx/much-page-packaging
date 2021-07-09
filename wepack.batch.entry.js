@@ -46,6 +46,7 @@ const setEntryTemplate = () => {
       template: entry[key].replace(/\.js/, '.html'),
       filename: key + '.html',
       chunks: [key],
+      inject: 'body',
       minify: false
     }))
   })

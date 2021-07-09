@@ -10,7 +10,7 @@
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production --node-env=production",
     "watch": "webpack --watch",
-    "serve": "nodemon ./shell.js"
+    "serve": "node ./shell.js"
   },
   "author": "",
   "license": "ISC",
@@ -30,6 +30,7 @@
     "autoprefixer": "^10.2.6",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "copy-webpack-plugin": "^9.0.1",
     "css-loader": "^5.2.6",
     "css-minimizer-webpack-plugin": "^3.0.2",
     "glob": "^7.1.7",

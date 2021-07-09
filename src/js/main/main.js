@@ -1,1 +1,3 @@
-alert(123)
+window.testFunction = function  () {
+  console.log(123)
+}
