@@ -49,7 +49,7 @@ static 静态资源文件夹(一般存放库文件)，如jquery, uicss等
 
 
 ```
-gir clone 项目地址
+git clone 项目地址
 cd much-page-packaging
 npm install
 npm run serve
