@@ -53,5 +53,20 @@ git clone 项目地址
 cd much-page-packaging
 npm install
 npm run serve
+chrome: 127.0.0.1:8080/main.html  // 这是一个404页面
+```
 
+
+### 关于热更新
+
+```
+在webpack.config.js中热更新是开启的
+{ 
+  devServer: {
+    hot: true
+  }
+}
+但是新入手的同志们需要注意：在你更改入口文件及其依赖文件(js\jsx等等)时，更改保存后浏览器会自动更新，无需手动
+刷新浏览器(所谓热更新嘛)，但是更新模板文件(.html)webpack是不会记录更新的！你需要刷新浏览器来看模板文件的改动，
+如果你想更改模板文件(.html)浏览器自动刷新的话，请把webpack.config.js文件中devServer配置项中的hot改为false
 ```

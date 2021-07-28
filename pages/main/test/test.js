@@ -1,2 +1,2 @@
 import '/src/css/test/test.css'
-alert('hello test apge!')
+alert('hello test apge666!')

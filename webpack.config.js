@@ -26,9 +26,10 @@ const config = {
   devtool: 'source-map',
 
   devServer: {
-    contentBase:  path.resolve(__dirname, "dist"),
+    contentBase: path.resolve(__dirname, "dist"),
+    inline: true,
     compress: true,
-    hot: false,
+    hot: true,
     open: true,
     port: 8080,
   },
@@ -109,7 +110,7 @@ const config = {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
         type: "asset",
         generator: {
-					filename: 'static/[hash][ext][query]'
+					filename: 'images/[hash][ext][query]'
 				}
       }
     ],
